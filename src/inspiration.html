@@ -1,0 +1,451 @@
+<body cz-shortcut-listen="true">
+<!--
+THESIS: Reštaurácia ako vrstvená vystrihovanka — dnešné menu je biely papier prilepený pod vystrihnutý erb; odmieta fotku jedla cez celú šírku a kartičkový zoznam služieb.
+OWN-WORLD: ploché papiere bez tieňovania (tyrkys, atramentová modrá, koral, nechtík, ružová, list), na krémovom papieri, vrúbkované okraje, hĺbka z podložených vystrihnutých hárkov; Young Serif + Lexend.
+STORY: majiteľ spozná svoje menu z Facebooku a sálu pre 200 hostí; hosť vidí, či je otvorené a čo sa dnes varí, a pošle dopyt alebo zavolá.
+FIRST VIEWPORT: farebné pole; vľavo nadpis, stav otvorenia, Poslať dopyt a Zavolať; vpravo (na mobile pod) vrúbkovaná karta Dnes varíme s erbom na hornom okraji.
+FORM: challenger „Vrstvená vystrihovanka" zvolený Martinom namiesto prideleného smeru 5; staging: žiadny z ponúknutých, poradie návštevy; seed b79c232d.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<div class="demo-pas"><strong>Ukážkový návrh</strong> webovej stránky pre Katka detské centrum. Je nezáväzný.<a class="sv-zmena-pas" href="https://svenity.sk/zmena/?k=DEMO-5UTC" target="_blank" rel="noopener" title="Napíšte jednou vetou, čo chcete inak, a o pár minút to uvidíte na ukážke">✏️ Upraviť ukážku</a><button type="button" class="sv-cta-pas" aria-label="Páči sa vám? Chcem takýto web, ozvite sa">Chcem takýto web →</button></div>
+
+<header class="hlavicka">
+  <div class="hlavicka-papier vrub-dole">
+    <div class="hl-in">
+      <a class="znacka" href="#"><img class="erb-maly logo-firmy" src="foto/logo.jpg" alt="Katka detské centrum"><span><b>Katka</b><small>detské ihrisko a oslavy, Nové Mesto nad Váhom</small></span></a>
+      <nav class="menu" aria-label="Hlavná navigácia">
+        <a href="#dnes">Cenník hrania</a>
+        <a href="#oslavy">Oslavy</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="tel" href="tel:0944282864">☎ 0944 282 864</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="uvod" style="position: relative;">
+  <div class="obal uvod-in">
+    <div>
+      <h1>Deti sa vyhrajú, vy si pokojne posedíte</h1>
+      <svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+      <p class="stav otvorene" id="stav" data-rozvrh="{&quot;po&quot;:&quot;10:00-19:00&quot;,&quot;ut&quot;:&quot;10:00-19:00&quot;,&quot;st&quot;:&quot;10:00-19:00&quot;,&quot;št&quot;:&quot;10:00-19:00&quot;,&quot;pi&quot;:&quot;10:00-19:00&quot;,&quot;so&quot;:&quot;10:00-19:00&quot;,&quot;ne&quot;:&quot;10:00-19:00&quot;}">Teraz máme otvorené, dnes do 19:00.</p>
+      <p class="lead">Detské rozprávkové ihrisko na námestí v Novom Meste nad Váhom pre deti od 0 do 12 rokov. Oslavu si vyberiete na presný čas a termín platí po potvrdení.</p>
+      <div class="akcie">
+        <a class="btn btn-plny" href="#dopyt" data-typ="oslava"><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Zostaviť oslavu</a>
+        <a class="btn btn-obrys" href="tel:0944282864">Zavolať 0944 282 864</a>
+      </div>
+    </div>
+    <div class="dnes-stlpec">
+      <svg class="kvet-bok kvet-l" viewBox="0 0 200 180" aria-hidden="true"><path class="c-list" d="M97 150h6V96h-6z"></path><path class="c-list" d="M100 140C80 140 62 128 56 108C78 108 94 120 100 140Z"></path><path class="c-tyr" d="M100 140C120 140 138 128 144 108C122 108 106 120 100 140Z"></path><path class="c-koral" d="M100 100C79 98 64 81 67 56C82 64 95 79 100 100Z"></path><path class="c-koral" d="M100 100C121 98 136 81 133 56C118 64 105 79 100 100Z"></path><path class="c-ruza" d="M100 30C115 45 119 73 100 100C81 73 85 45 100 30Z"></path></svg><svg class="kvet-bok kvet-p" viewBox="0 0 200 180" aria-hidden="true"><path class="c-list" d="M97 150h6V96h-6z"></path><path class="c-list" d="M100 140C80 140 62 128 56 108C78 108 94 120 100 140Z"></path><path class="c-tyr" d="M100 140C120 140 138 128 144 108C122 108 106 120 100 140Z"></path><path class="c-koral" d="M100 100C79 98 64 81 67 56C82 64 95 79 100 100Z"></path><path class="c-koral" d="M100 100C121 98 136 81 133 56C118 64 105 79 100 100Z"></path><path class="c-ruza" d="M100 30C115 45 119 73 100 100C81 73 85 45 100 30Z"></path></svg>
+      <div class="dnes vrstvy" id="dnes">
+        <svg class="erb lep" viewBox="0 0 200 200" aria-hidden="true">
+  <path class="c-navy" d="M100.00 6.00A14.45 14.45 0 0 1 126.48 9.81A14.45 14.45 0 0 1 150.82 20.92A14.45 14.45 0 0 1 171.04 38.44A14.45 14.45 0 0 1 185.51 60.95A14.45 14.45 0 0 1 193.04 86.62A14.45 14.45 0 0 1 193.04 113.38A14.45 14.45 0 0 1 185.51 139.05A14.45 14.45 0 0 1 171.04 161.56A14.45 14.45 0 0 1 150.82 179.08A14.45 14.45 0 0 1 126.48 190.19A14.45 14.45 0 0 1 100.00 194.00A14.45 14.45 0 0 1 73.52 190.19A14.45 14.45 0 0 1 49.18 179.08A14.45 14.45 0 0 1 28.96 161.56A14.45 14.45 0 0 1 14.49 139.05A14.45 14.45 0 0 1 6.96 113.38A14.45 14.45 0 0 1 6.96 86.62A14.45 14.45 0 0 1 14.49 60.95A14.45 14.45 0 0 1 28.96 38.44A14.45 14.45 0 0 1 49.18 20.92A14.45 14.45 0 0 1 73.52 9.81A14.45 14.45 0 0 1 100.00 6.00Z"></path>
+  <circle class="c-biela" cx="100" cy="100" r="80"></circle>
+  <path class="c-list" d="M97 150h6V114h-6z"></path>
+  <path class="c-list" d="M100 148C80 148 62 136 55 115C78 115 94 127 100 148Z"></path>
+  <path class="c-tyr" d="M100 148C120 148 138 136 145 115C122 115 106 127 100 148Z"></path>
+  <path class="c-koral" d="M100 120C79 118 64 101 67 76C82 84 95 99 100 120Z"></path>
+  <path class="c-koral" d="M100 120C121 118 136 101 133 76C118 84 105 99 100 120Z"></path>
+  <path class="c-ruza" d="M100 50C115 65 119 93 100 120C81 93 85 65 100 50Z"></path>
+  <path class="c-nech" d="M100 70C109 81 111 99 100 113C89 99 91 81 100 70Z"></path>
+  <ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(0 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(45 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(90 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(135 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(180 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(225 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(270 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(315 57 70)"></ellipse><circle class="c-nech" cx="57" cy="70" r="5.9"></circle><circle class="c-navy" cx="57" cy="70" r="2.2"></circle><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(0 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(45 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(90 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(135 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(180 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(225 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(270 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(315 143 70)"></ellipse><circle class="c-nech" cx="143" cy="70" r="5.9"></circle><circle class="c-navy" cx="143" cy="70" r="2.2"></circle>
+  <circle class="c-nech" cx="100" cy="164" r="6"></circle>
+</svg>
+        <div class="dnes-papier lep">
+          <h2>Cenník hrania</h2>
+          
+          <div id="dnes-obsah">
+            
+            <h3>Koľko stojí vstup</h3>
+            <ol><li><span class="cislo">1.</span><span>Vstup na 1 hodinu</span><span class="cena">5 €</span><span class="det">dieťa s dozorom rodiča</span></li><li><span class="cislo">2.</span><span>Vstup na 2 hodiny</span><span class="cena">9 €</span><span class="det">dieťa s dozorom rodiča</span></li><li><span class="cislo">3.</span><span>Vstup na 3 hodiny</span><span class="cena">12 €</span><span class="det">dieťa s dozorom rodiča</span></li><li><span class="cislo">4.</span><span>Celodenný vstup</span><span class="cena">15 €</span><span class="det">dieťa s dozorom rodiča</span></li><li><span class="cislo">5.</span><span>Doprovod</span><span class="cena">1 €</span><span class="det">dieťa od 0 do 1 roka zadarmo</span></li><li><span class="cislo">6.</span><span>Akcia 17:00 - 19:00</span><span class="cena">6,90 €</span><span class="det">večerný vstup</span></li><li><span class="cislo">7.</span><span>Permanentka 5 vstupov</span><span class="cena">25 €</span><span class="det">6. vstup zadarmo</span></li><li><span class="cislo">8.</span><span>Permanentka 10 vstupov</span><span class="cena">75 €</span><span class="det">vstupy na 2 hodiny</span></li><li><span class="cislo">9.</span><span>Školy a škôlky od 10 detí</span><span class="cena">3,50 €</span><span class="det">za dieťa, 1 hodina</span></li><li><span class="cislo">10.</span><span>Opatrovanie dieťaťa</span><span class="cena">8 €</span><span class="det">1 hodina</span></li></ol>
+          </div>
+          <p class="dnes-pata">Dieťa do 1 roka vstúpi zadarmo, doprovod platí 1 €. Otvorené denne od 10:00 do 19:00.</p>
+        </div>
+      </div>
+      <p class="dnes-pozn">Cenník je z vášho Instagramu (výber Cenník). V ostrej verzii ho nahradíme aktuálnym. V ostrej verzii sem cenník aj akcie napíšete z mobilu a na webe to je hneď.</p>
+    </div>
+  </div>
+</section>
+
+<div class="fakty">
+  <ul class="obal">
+    <li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg><strong>4,5 ★</strong><span>Google (53 recenzií)</span></li>
+    <li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg><strong>od 5 €</strong><span>za hodinu hrania dieťaťa</span></li>
+    <li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg><strong>Denne 10-19</strong><span>otvorené aj cez víkend</span></li>
+    <li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg><strong>od 190 €</strong><span>oslava pre 10 detí na 3 hodiny</span></li>
+  </ul>
+</div>
+
+
+
+
+
+<section class="sekcia pole-nechtik" id="oslavy">
+  <div class="obal dva-stlpce">
+    <div>
+      <h2>Oslava na presný čas</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+      <p class="uvodny">Oslavu si vyskladáte tu na stránke: balík, maskota aj catering. Hneď vidíte orientačnú cenu a vyberiete presný čas. Termín platí až po potvrdení od nás.</p>
+      
+    </div>
+    <div class="vrstvy karta-s-erbom" style="--v1:var(--koral-svetly);--v2:var(--navy)">
+      <svg class="erb-karta" viewBox="0 0 200 200" aria-hidden="true">
+  <path class="c-navy" d="M100.00 6.00A14.45 14.45 0 0 1 126.48 9.81A14.45 14.45 0 0 1 150.82 20.92A14.45 14.45 0 0 1 171.04 38.44A14.45 14.45 0 0 1 185.51 60.95A14.45 14.45 0 0 1 193.04 86.62A14.45 14.45 0 0 1 193.04 113.38A14.45 14.45 0 0 1 185.51 139.05A14.45 14.45 0 0 1 171.04 161.56A14.45 14.45 0 0 1 150.82 179.08A14.45 14.45 0 0 1 126.48 190.19A14.45 14.45 0 0 1 100.00 194.00A14.45 14.45 0 0 1 73.52 190.19A14.45 14.45 0 0 1 49.18 179.08A14.45 14.45 0 0 1 28.96 161.56A14.45 14.45 0 0 1 14.49 139.05A14.45 14.45 0 0 1 6.96 113.38A14.45 14.45 0 0 1 6.96 86.62A14.45 14.45 0 0 1 14.49 60.95A14.45 14.45 0 0 1 28.96 38.44A14.45 14.45 0 0 1 49.18 20.92A14.45 14.45 0 0 1 73.52 9.81A14.45 14.45 0 0 1 100.00 6.00Z"></path>
+  <circle class="c-biela" cx="100" cy="100" r="80"></circle>
+  <path class="c-list" d="M97 150h6V114h-6z"></path>
+  <path class="c-list" d="M100 148C80 148 62 136 55 115C78 115 94 127 100 148Z"></path>
+  <path class="c-tyr" d="M100 148C120 148 138 136 145 115C122 115 106 127 100 148Z"></path>
+  <path class="c-koral" d="M100 120C79 118 64 101 67 76C82 84 95 99 100 120Z"></path>
+  <path class="c-koral" d="M100 120C121 118 136 101 133 76C118 84 105 99 100 120Z"></path>
+  <path class="c-ruza" d="M100 50C115 65 119 93 100 120C81 93 85 65 100 50Z"></path>
+  <path class="c-nech" d="M100 70C109 81 111 99 100 113C89 99 91 81 100 70Z"></path>
+  <ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(0 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(45 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(90 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(135 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(180 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(225 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(270 57 70)"></ellipse><ellipse class="c-koral" cx="57" cy="62.3" rx="3.6" ry="7.0" transform="rotate(315 57 70)"></ellipse><circle class="c-nech" cx="57" cy="70" r="5.9"></circle><circle class="c-navy" cx="57" cy="70" r="2.2"></circle><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(0 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(45 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(90 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(135 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(180 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(225 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(270 143 70)"></ellipse><ellipse class="c-koral" cx="143" cy="62.3" rx="3.6" ry="7.0" transform="rotate(315 143 70)"></ellipse><circle class="c-nech" cx="143" cy="70" r="5.9"></circle><circle class="c-navy" cx="143" cy="70" r="2.2"></circle>
+  <circle class="c-nech" cx="100" cy="164" r="6"></circle>
+</svg>
+      <div class="papier-karta">
+        <h3>Čo si môžete vybrať</h3>
+        <ul class="zoznam"><li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Oslava 190 € (10 detí + dospelí)</li><li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Uzatvorená spoločnosť 360 €</li><li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Požičovňa maskotov</li><li><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Catering podľa výberu</li></ul>
+        <p class="poznamka">V cene osláv je vstup, 10 detských nápojov, 2x detské šampanské, 2x 1 l limonády, sladké a slané dobroty, slávnostné prestretie stola, narodeninová výzdoba a detská hudba. Oslava trvá 3 hodiny, od 10:00 do 13:00 alebo od 15:00 do 18:00.</p>
+        <a class="btn btn-plny" href="#dopyt" data-typ="oslava"><svg class="glyf" viewBox="0 0 40 40" aria-hidden="true"><circle class="c-biela" cx="20" cy="20" r="19"></circle><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(0 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(45 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(90 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(135 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(180 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(225 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(270 20 20)"></ellipse><ellipse class="c-koral" cx="20" cy="11.8" rx="3.9" ry="7.5" transform="rotate(315 20 20)"></ellipse><circle class="c-nech" cx="20" cy="20" r="6.3"></circle><circle class="c-navy" cx="20" cy="20" r="2.4"></circle></svg>Zostaviť oslavu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="sekcia" id="galeria">
+  <div class="obal">
+    <h2>Pozrite sa k nám</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+    <div class="galeria">
+      <figure><img src="foto/prace-1.jpg" alt="Gulíčkový bazén a preliezky v interiérovom ihrisku" loading="lazy"><figcaption>Gulíčkový bazén a preliezky v interiérovom ihrisku</figcaption></figure>
+      <figure><img src="foto/prace-4.jpg" alt="Narodeninový stôl so svetlicami a výzdobou" loading="lazy"><figcaption>Narodeninový stôl so svetlicami a výzdobou</figcaption></figure>
+      <figure><img src="foto/prace-2.jpg" alt="Maskot z požičovne maskotov v centre" loading="lazy"><figcaption>Maskot z požičovne maskotov v centre</figcaption></figure>
+    </div>
+    
+  </div>
+</section>
+
+<section class="sekcia pole-papier" id="recenzie">
+  <div class="obal">
+    <h2>Čo o nás píšu hostia</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+    <p class="uvodny">Google: 4,5 z 5 (53 hodnotení)</p>
+    <div class="recenzie">
+      <blockquote class="recenzia"><div class="hv" aria-label="5 z 5 hviezd">★★★★★</div><p>„Pekné, menšie detské centrum s primeranými cenami. Je tu viacero hracích prvkov pre menšie aj väčšie deti. Pre rodičov miesto na sedenie."</p><footer>Eva Z., Google</footer></blockquote>
+      <blockquote class="recenzia"><div class="hv" aria-label="5 z 5 hviezd">★★★★★</div><p>„Príjemné detské interiérové ihrisko, super aj pre menšie detičky. Navštívili sme ho prvýkrát a deti nechceli ísť domov. Určite sa ešte vrátime."</p><footer>Nikol B., Google</footer></blockquote>
+      <blockquote class="recenzia"><div class="hv" aria-label="5 z 5 hviezd">★★★★★</div><p>„Detské centrum bolo moc super, príjemná obsluha, všade čisto, naozaj sme boli spokojní. Určite prídeme znova."</p><footer>Mário Č., Google</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+
+<!-- KONFIGURÁTOR OSLAVY (Katka detské centrum): nahrádza dopytový formulár, kotva #dopyt ostáva.
+     Ceny z plagátu osláv a Instagram cenníka (190 € oslava, 360 € uzatvorená spoločnosť, maskot 20/40 €).
+     Catering firma neoceňuje, preto sa do orientačnej ceny nerátá. Čas oslavy je vždy presný slot
+     (10:00-13:00 alebo 15:00-18:00) a termín platí až po potvrdení centrom. true a  nahradí build. -->
+<section id="dopyt" class="kf" data-prvok="konfigurator" data-demo="true" data-webhook="" aria-labelledby="kf-heading">
+ <h2 id="kf-heading">Zostavte si oslavu</h2><p class="kf-lead">Vyberte balík, maskota a catering, vyberte presný čas a my vám termín potvrdíme.</p>
+ <p class="kf-demo">Ukážka: formulár nič neodosiela. Ceny sú z vášho cenníka.</p>
+ <form class="kf-form">
+  <div class="kf-kroky"><fieldset class="kf-step"><legend>1. Balík oslavy</legend><div class="kf-cards"><label class="kf-card"><img src="foto/prace-4.jpg" alt="" loading="lazy"><input type="radio" name="kf-krok-0" value="0" required=""><span>Oslava</span><small class="kf-c">190&nbsp;€</small><small>10 detí a dospelí, vstup, 10 detských nápojov, 2x detské šampanské, 2x 1 l limonády, sladké a slané dobroty, výzdoba a hudba</small></label><label class="kf-card"><img src="foto/prace-1.jpg" alt="" loading="lazy"><input type="radio" name="kf-krok-0" value="1" required=""><span>Uzatvorená spoločnosť</span><small class="kf-c">360&nbsp;€</small><small>celé centrum len pre vás, súkromie, neobmedzená zábava a oslava bez cudzích návštevníkov</small></label></div></fieldset><fieldset class="kf-step"><legend>2. Maskot na oslavu</legend><div class="kf-cards"><label class="kf-card"><input type="radio" name="kf-krok-1" value="0" required=""><span>Bez maskota</span><small class="kf-c">bez príplatku</small><small>oslava len s balíkom, ktorý ste si vybrali</small></label><label class="kf-card"><img src="foto/prace-2.jpg" alt="" loading="lazy"><input type="radio" name="kf-krok-1" value="1" required=""><span>Maskot v centre bez animátora</span><small class="kf-c">20&nbsp;€</small><small>Dino, Maco, Micky alebo Minnie, 1 deň</small></label><label class="kf-card"><img src="foto/prace-3.jpg" alt="" loading="lazy"><input type="radio" name="kf-krok-1" value="2" required=""><span>Maskot s animátorom</span><small class="kf-c">40&nbsp;€</small><small>maskot a animátor, 1 deň</small></label></div></fieldset><fieldset class="kf-step"><legend>3. Catering podľa výberu</legend><div class="kf-cards"><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="0"><span>Ovocné a mäsové prkénko</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="1"><span>Hranolky</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="2"><span>Pizza</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="3"><span>Nugetky</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="4"><span>Párok v rožku</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="5"><span>Zemiaková kvetina</span><small class="kf-c">cena podľa výberu</small></label><label class="kf-card"><input type="checkbox" name="kf-krok-2" value="6"><span>Palacinky</span><small class="kf-c">cena podľa výberu</small></label></div></fieldset></div>
+  <div class="kf-bar" aria-live="polite"><strong class="kf-cena">Orientačne 190&nbsp;€</strong><span class="kf-cas">Oslava trvá 3 hodiny</span></div>
+  <p class="kf-pozn">Catering nie je v cene, jeho cenu doplníme podľa vášho výberu.</p>
+  <h3>Váš výber</h3><ul class="kf-riadky"><li>Oslava: 190&nbsp;€</li><li>Bez maskota</li></ul>
+  <div class="kf-polia">
+   <label>Meno<input name="meno" autocomplete="name" required="" maxlength="120"></label>
+   <label>E-mail<input name="email" type="email" autocomplete="email" required="" maxlength="254"></label>
+   <label>Telefón (nepovinné)<input name="telefon" type="tel" autocomplete="tel" maxlength="40"></label>
+   <label>Počet detí (nepovinné)<input name="pocet" type="number" min="1" max="60" inputmode="numeric"></label>
+   <label>Dátum oslavy<input name="termin" type="date" required="" min="2026-11-12"></label>
+   <label>Čas oslavy<select name="cas" required=""><option value="">Vyberte čas</option><option>10:00 - 13:00</option><option>15:00 - 18:00</option></select></label>
+  </div>
+  <label class="kf-pozn-pole">Poznámka (meno oslávenca, vek, alergie)<textarea name="poznamka" maxlength="3000"></textarea></label>
+  <p class="kf-suhlas">Kontaktné údaje použijeme na vybavenie vášho dopytu. Termín platí až po potvrdení od centra.</p>
+  <button type="submit">Odoslať dopyt na oslavu</button><p class="kf-status" role="status" tabindex="-1"></p>
+ </form>
+ <noscript>Konfigurátor vyžaduje JavaScript. Zavolajte nám na 0944 282 864.</noscript>
+</section>
+<style>
+.kf[data-prvok]{--kf-bg:var(--biela,#fff);--kf-text:var(--navy,#14254A);--kf-accent:var(--koral-tmavy,#A92D23);--kf-tint:var(--papier,#F7EEDC);max-width:1100px;margin:2rem auto;padding:clamp(1rem,4vw,3rem);background:var(--kf-bg);color:var(--kf-text);font:1rem/1.6 var(--pismo,system-ui,sans-serif);border-radius:1.2rem;border:2px solid var(--kf-text)}
+.kf[data-prvok] *{box-sizing:border-box}
+/* Šablóna štýluje holý `form`; prvok ho vynuluje, aby zdedil svoje farby. */
+.kf[data-prvok] .kf-form{background:none;border:0;box-shadow:none;padding:0;margin:0;color:inherit}
+.kf[data-prvok] h2,.kf[data-prvok] h3{color:inherit;line-height:1.15;font-family:var(--pismo-nadpis,Georgia,serif);font-weight:400}.kf[data-prvok] h2{font-size:clamp(1.8rem,4vw,2.7rem)}
+.kf[data-prvok] .kf-lead{max-width:44rem}
+.kf[data-prvok] .kf-demo{margin:.8rem 0 0;font-size:.92rem;color:var(--sivy,#4A5670)}
+.kf[data-prvok] .kf-step{border:0;padding:0;margin:1.8rem 0;min-inline-size:0}.kf[data-prvok] legend{font-size:1.25rem;font-weight:700;margin-bottom:.8rem}
+.kf[data-prvok] .kf-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem}
+.kf[data-prvok] .kf-card{display:grid;grid-template-columns:auto 1fr;gap:.2rem .65rem;align-content:start;padding:.9rem;border:2px solid #14254A33;border-radius:.9rem;cursor:pointer;background:var(--kf-bg);transition:border-color .18s ease,background-color .18s ease}
+.kf[data-prvok] .kf-card:hover{border-color:var(--kf-text)}
+.kf[data-prvok] .kf-card:has(:checked){border-color:var(--kf-accent);background:var(--kf-tint);box-shadow:inset 0 0 0 1px var(--kf-accent)}
+.kf[data-prvok] .kf-card img{grid-column:1/-1;width:100%;height:150px;object-fit:cover;border-radius:.6rem;margin-bottom:.35rem}
+.kf[data-prvok] .kf-card span{font-weight:700;line-height:1.3}.kf[data-prvok] .kf-card small{grid-column:2;color:var(--sivy,#4A5670);line-height:1.4}
+.kf[data-prvok] .kf-card .kf-c{color:var(--kf-accent);font-weight:700}
+.kf[data-prvok] input[type=radio],.kf[data-prvok] input[type=checkbox]{width:20px;height:20px;margin-top:.2rem;accent-color:var(--kf-accent)}
+.kf[data-prvok] .kf-bar{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1.4rem;padding:1rem 0;border-block:2px solid var(--kf-text);margin:1.2rem 0 .6rem}
+.kf[data-prvok] .kf-cena{font-size:1.5rem;font-family:var(--pismo-nadpis,Georgia,serif);font-weight:400;color:var(--kf-accent)}
+.kf[data-prvok] .kf-pozn{font-size:.95rem;color:var(--sivy,#4A5670);margin:0 0 1rem}
+.kf[data-prvok] .kf-riadky{padding-left:1.3rem;margin:.4rem 0 1.4rem}
+.kf[data-prvok] .kf-polia{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:.4rem 1.2rem}
+.kf[data-prvok] label{display:block;margin:.7rem 0;font-weight:500}
+.kf[data-prvok] input:not([type=radio]):not([type=checkbox]),.kf[data-prvok] select,.kf[data-prvok] textarea{display:block;width:100%;margin-top:.3rem;font:inherit;padding:.65rem .75rem;background:var(--kf-bg);color:var(--kf-text);border:2px solid #14254A66;border-radius:.6rem;min-height:46px}
+.kf[data-prvok] textarea{min-height:5.5rem}
+.kf[data-prvok] input:focus-visible,.kf[data-prvok] select:focus-visible,.kf[data-prvok] textarea:focus-visible{border-color:var(--kf-text)}
+.kf[data-prvok] .kf-suhlas{font-size:.92rem;color:var(--sivy,#4A5670);margin:.6rem 0 1rem}
+.kf[data-prvok] button{font:inherit;font-weight:700;padding:.8rem 1.5rem;background:var(--kf-accent);color:#fff;border:2px solid var(--kf-accent);border-radius:2rem;cursor:pointer;min-height:48px;transition:transform .15s ease,background-color .15s ease}
+.kf[data-prvok] button:hover{background:var(--kf-text);border-color:var(--kf-text)}.kf[data-prvok] button:active{transform:translateY(1px) scale(.99)}
+.kf[data-prvok] :focus-visible{outline:3px solid var(--kf-accent);outline-offset:3px}
+.kf[data-prvok] .kf-status{margin:1rem 0 0;font-weight:700}
+@media(prefers-reduced-motion:reduce){.kf[data-prvok] *{transition:none!important}}
+@media(max-width:520px){.kf[data-prvok]{border-radius:.9rem;margin-inline:.6rem}.kf[data-prvok] .kf-card img{height:120px}}
+</style>
+<script>
+(()=>{
+ const root=document.querySelector('[data-prvok="konfigurator"]'),form=root.querySelector('form'),status=root.querySelector('.kf-status');
+ const DEMO=root.dataset.demo!=='false',money=n=>n.toLocaleString('sk-SK',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+ // c = cena v EUR (z cenníka), t = text ceny, ak sa nedá spočítať (catering), p = popis, h = trvanie v hodinách
+ const CFG=[
+  {nazov:'Balík oslavy',typ:'radio',moznosti:[
+   {n:'Oslava',c:190,h:3,p:'10 detí a dospelí, vstup, 10 detských nápojov, 2x detské šampanské, 2x 1 l limonády, sladké a slané dobroty, výzdoba a hudba',img:'foto/prace-4.jpg'},
+   {n:'Uzatvorená spoločnosť',c:360,h:3,p:'celé centrum len pre vás, súkromie, neobmedzená zábava a oslava bez cudzích návštevníkov',img:'foto/prace-1.jpg'}]},
+  {nazov:'Maskot na oslavu',typ:'radio',moznosti:[
+   {n:'Bez maskota',c:0,h:0,t:'bez príplatku',p:'oslava len s balíkom, ktorý ste si vybrali'},
+   {n:'Maskot v centre bez animátora',c:20,h:0,p:'Dino, Maco, Micky alebo Minnie, 1 deň',img:'foto/prace-2.jpg'},
+   {n:'Maskot s animátorom',c:40,h:0,p:'maskot a animátor, 1 deň',img:'foto/prace-3.jpg'}]},
+  {nazov:'Catering podľa výberu',typ:'checkbox',moznosti:[
+   {n:'Ovocné a mäsové prkénko',c:0,h:0,t:'cena podľa výberu'},{n:'Hranolky',c:0,h:0,t:'cena podľa výberu'},{n:'Pizza',c:0,h:0,t:'cena podľa výberu'},
+   {n:'Nugetky',c:0,h:0,t:'cena podľa výberu'},{n:'Párok v rožku',c:0,h:0,t:'cena podľa výberu'},{n:'Zemiaková kvetina',c:0,h:0,t:'cena podľa výberu'},{n:'Palacinky',c:0,h:0,t:'cena podľa výberu'}]}
+ ];
+ const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
+ const controls=[];
+ CFG.forEach((step,i)=>{
+  const field=el('fieldset'),legend=el('legend',`${i+1}. ${step.nazov}`),cards=el('div');field.className='kf-step';cards.className='kf-cards';
+  step.moznosti.forEach((o,j)=>{
+   if(!Number.isFinite(o.c)||o.c<0||!Number.isFinite(o.h)||o.h<0)throw new Error('CFG: cena a čas musia byť nezáporné čísla');
+   const label=el('label'),input=el('input');label.className='kf-card';input.type=step.typ;input.name='kf-krok-'+i;input.value=String(j);input.checked=step.typ==='radio'&&j===0;input.required=step.typ==='radio';
+   if(o.img){const img=el('img');img.src=o.img;img.alt='';img.loading='lazy';label.append(img)}
+   const cena=el('small',o.t||(o.c?money(o.c):'v cene'));cena.className='kf-c';
+   label.append(input,el('span',o.n),cena);
+   if(o.p)label.append(el('small',o.p));
+   cards.append(label);controls.push({input,o});
+  });field.append(legend,cards);root.querySelector('.kf-kroky').append(field);
+ });
+ if(!DEMO)root.querySelector('.kf-demo').remove();
+ function calc(){
+  const selected=controls.filter(x=>x.input.checked).map(x=>x.o),cents=selected.reduce((s,o)=>s+Math.round(o.c*100),0),hours=selected.reduce((s,o)=>s+o.h,0);
+  root.querySelector('.kf-cena').textContent='Orientačne '+money(cents/100);root.querySelector('.kf-cas').textContent=hours?('Oslava trvá '+hours.toLocaleString('sk-SK')+' hodiny'):'';
+  root.querySelector('.kf-riadky').replaceChildren(...selected.map(o=>el('li',o.c?`${o.n}: ${money(o.c)}`:o.n)));
+  return{vyber:selected.map(o=>o.n),cena:cents/100,hodiny:hours};
+ }
+ form.addEventListener('change',calc);calc();
+ const today=new Date();form.elements.termin.min=new Date(today-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+ let sending=false;
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();if(sending||!form.reportValidity())return;
+  if(DEMO){status.textContent='Ukážka: dopyt sa neodoslal. V ostrej verzii príde centru váš výber a termín platí po jeho potvrdení.';status.focus();return}
+  const hook=root.dataset.webhook;
+  if(!hook||!/^https:\/\//i.test(hook)){status.textContent='Odosielanie nie je nastavené. Zavolajte nám na 0944 282 864.';status.focus();return}
+  sending=true;const btn=form.querySelector('button[type=submit]');btn.disabled=true;status.textContent='Odosielam…';
+  try{
+   const response=await fetch(hook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({zdroj:'konfigurator-oslavy',...Object.fromEntries(new FormData(form)),...calc()}),signal:AbortSignal.timeout(15000)});
+   if(!response.ok)throw new Error('HTTP '+response.status);
+   status.textContent='Ďakujeme, dopyt bol odoslaný. Termín platí až po potvrdení od nás.';
+  }catch{status.textContent='Odoslanie sa nepodarilo potvrdiť. Skúste to znova alebo nám zavolajte.'}
+  finally{sending=false;btn.disabled=false;status.focus()}
+ });
+})();
+</script>
+
+
+<section class="sekcia" id="ako-to-uvidite-vy">
+  <div class="obal">
+    <h2>Ako to uvidíte vy</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+    <p class="uvodny">Namiesto otázok v správach vám príde hotové zadanie oslavy.</p>
+    <ol class="kroky">
+      <li><span class="kedy">Rodič</span>Vyberie balík, maskota a catering, vidí orientačnú cenu a pošle želaný dátum a čas, aj večer, keď máte zatvorené.</li>
+      <li><span class="kedy">Vy</span>Dostanete zadanie zložené z jeho výberu, potvrdíte termín a až potom je oslava v kalendári.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sekcia pole-papier o-nas" id="o-nas">
+  <div class="obal dva-stlpce">
+    <div>
+      <h2>Centrum, ktoré patrí vám a vašim deťom</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+      <p>Katka detské centrum je detské rozprávkové interiérové ihrisko na Námestí slobody v Novom Meste nad Váhom. Deti sa hrajú, rodičia majú kde posedieť a dať si kávu alebo džús.</p>
+      <p>Okrem hrania robíme detské oslavy, požičovňu maskotov Dino, Maco, Micky a Minnie a súkromné detské opatrovateľské centrum Slniečko. Centrum je víťaz súťaže ORLY v detskom odvetví 2025-2026.</p>
+    </div>
+    <dl class="fakty-firmy" aria-label="Údaje o prevádzke a firme">
+      <div><dt>Prevádzka</dt><dd>Katka detské centrum, Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom</dd></div>
+      <div><dt>Prevádzkovateľ</dt><dd>Katka detské centrum</dd></div>
+      <div><dt>Sídlo</dt><dd>Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom</dd></div>
+      <div><dt>IČO</dt><dd>57205558</dd></div>
+      
+    </dl>
+  </div>
+</section>
+
+<section class="sekcia" id="kontakt">
+  <div class="obal kontakt-grid">
+    <div>
+      <h2>Kontakt a otváracie hodiny</h2><svg class="delic" viewBox="0 0 220 24" aria-hidden="true"><rect x="0" y="10.8" width="88" height="2.4" fill="currentColor"></rect><rect x="132" y="10.8" width="88" height="2.4" fill="currentColor"></rect><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(0 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(45 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(90 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(135 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(180 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(225 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(270 110 12)"></ellipse><ellipse class="c-koral" cx="110" cy="5.9" rx="2.9" ry="5.5" transform="rotate(315 110 12)"></ellipse><circle class="c-nech" cx="110" cy="12" r="4.6"></circle><circle class="c-navy" cx="110" cy="12" r="1.8"></circle></svg>
+      <ul class="kontakty">
+        <li><span class="k">Telefón</span><span><a href="tel:0944282864">0944 282 864</a></span></li>
+        <li><span class="k">E-mail</span><span><a href="mailto:detskecentrumkatka@gmail.com">detskecentrumkatka@gmail.com</a></span></li>
+        <li><span class="k">Adresa</span><span>Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom</span></li>
+        <li><span class="k">Facebook</span><span><a href="https://www.facebook.com/detskecentrumKatka" target="_blank" rel="noopener">Katka detské centrum</a></span></li>
+        <li><span class="k">Instagram</span><span><a href="https://www.instagram.com/detske_centrum_katka/" target="_blank" rel="noopener">@detske_centrum_katka</a></span></li>
+      </ul>
+      <dl class="hodiny" aria-label="Otváracie hodiny">
+        <div><dt>Pondelok - Nedeľa</dt><dd>10:00 - 19:00</dd></div>
+      </dl>
+    </div>
+    <div class="mapa vrub-oba"><span class="adr">Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom</span><span class="pozn">Detské centrum je priamo na námestí. Otvorené denne od 10:00 do 19:00.</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="pata vrub-hore">
+  <div class="obal">
+    <p class="pravne">© 2026 Katka detské centrum, sídlo Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom, IČO 57205558, zapísaná v obchodnom registri. Prevádzka Katka detské centrum, Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom. Web spĺňa povinné náležitosti podľa zák. č. 22/2004 Z. z. a GDPR a nepoužíva sledovacie cookies, preto tu nie je žiadna cookie lišta.</p>
+    <nav aria-label="Právne informácie">
+      <button type="button" data-gdpr="">Ochrana osobných údajov</button>
+      <button type="button" data-gdpr="">Cookies</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog id="gdpr-dialog">
+  <h3>Ochrana osobných údajov</h3>
+  <p><strong>Prevádzkovateľ:</strong> Katka detské centrum, Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom, IČO 57205558.</p>
+  <p>Údaje z formulára (meno, telefón, termín, počet hostí a poznámku) spracúvame len na vybavenie rezervácie alebo dopytu (čl. 6 ods. 1 písm. b) GDPR, predzmluvné vzťahy a plnenie zmluvy) najviac 24 mesiacov. Nikomu ich neposkytujeme na marketing.</p>
+  <p><strong>Cookies:</strong> web nepoužíva sledovacie ani marketingové cookies, preto nezobrazuje cookie lištu. Pri otvorení stránky zaznamenáme čas, adresu stránky a IP adresu, aby sme vedeli, že vás web navštívil niekto konkrétny; nič iné sa neukladá.</p>
+  <p>Máte právo na prístup k údajom, ich opravu a výmaz, napíšte na detskecentrumkatka@gmail.com. <em>(V ukážke skrátené, ostrá verzia obsahuje úplné zásady.)</em></p>
+  <button class="btn btn-plny" type="button" data-zavriet="">Zavrieť</button>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('gdpr-dialog');
+  document.querySelectorAll('[data-gdpr]').forEach(function(b){b.addEventListener('click',function(){dlg.showModal()})});
+  dlg.querySelector('[data-zavriet]').addEventListener('click',function(){dlg.close()});
+
+  /* stav otvorenia podľa rozvrhu — jedno pravdivé miesto s hodinami */
+  var st=document.getElementById('stav');
+  if(st&&st.dataset.rozvrh){try{
+    var r=JSON.parse(st.dataset.rozvrh),kl=['ne','po','ut','st','št','pi','so'],
+        kedy=['v nedeľu','v pondelok','v utorok','v stredu','vo štvrtok','v piatok','v sobotu'];
+    var min=function(t){var a=t.split(':');return +a[0]*60+ +a[1]},
+        interval=function(d){var v=r[kl[d]];if(!v)return null;var x=v.split('-');return{od:x[0].trim(),doo:x[1].trim()}};
+    var teraz=new Date(),d=teraz.getDay(),m=teraz.getHours()*60+teraz.getMinutes(),dnes=interval(d);
+    if(dnes&&m>=min(dnes.od)&&m<min(dnes.doo)){st.textContent='Teraz máme otvorené, dnes do '+dnes.doo+'.';st.classList.add('otvorene')}
+    else if(dnes&&m<min(dnes.od)){st.textContent='Teraz máme zatvorené. Dnes otvárame o '+dnes.od+'.';st.classList.add('zatvorene')}
+    else{for(var i=1;i<=7;i++){var n=interval((d+i)%7);if(n){st.textContent='Teraz máme zatvorené. Otvárame '+(i===1?'zajtra':kedy[(d+i)%7])+' o '+n.od+'.';st.classList.add('zatvorene');break}}}
+  }catch(e){}}
+
+  /* Dnes varíme: prepínanie dní týždňa šípkami (‹ ›), keď config dodá dv.tyzden */
+  var dnesEl=document.getElementById('dnes');
+  if(dnesEl&&dnesEl.dataset.tyzden){try{
+    var tyzden=JSON.parse(dnesEl.dataset.tyzden);
+    var datumEl=document.getElementById('dnes-datum'),obsahEl=document.getElementById('dnes-obsah');
+    var escJs=function(s){var d=document.createElement('div');d.textContent=String(s==null?'':s);return d.innerHTML};
+    var idx=parseInt(dnesEl.dataset.start,10);if(isNaN(idx)||idx<0||idx>=tyzden.length)idx=0;
+    var vykresli=function(){
+      var d=tyzden[idx];
+      if(datumEl)datumEl.textContent=(d.den?d.den+' ':'')+(d.datum||'');
+      dnesEl.querySelectorAll('.sipka').forEach(function(b){
+        var smer=+b.dataset.smer;b.disabled=(smer<0&&idx===0)||(smer>0&&idx===tyzden.length-1);
+      });
+      if(d.zatvorene){
+        obsahEl.innerHTML='<p class="dnes-zatvorene">'+escJs(d.zatvorene)+' — dnes nevaríme.</p>';
+        return;
+      }
+      var polH=(d.polievky||[]).length?'<h3>Polievky</h3><ul>'+d.polievky.map(function(x,i){
+        return '<li><span class="cislo">'+(i+1)+'.</span><span>'+escJs(x.nazov)+'</span><span class="cena">'+escJs(x.cena||'')+'</span>'+(x.detail?'<span class="det">'+escJs(x.detail)+'</span>':'')+'</li>';
+      }).join('')+'</ul>':'';
+      var jedH='<h3>Hlavné jedlá</h3><ol>'+(d.jedla||[]).map(function(x,i){
+        return '<li><span class="cislo">'+(i+1)+'.</span><span>'+escJs(x.nazov)+'</span><span class="cena">'+escJs(x.cena||'')+'</span>'+(x.detail?'<span class="det">'+escJs(x.detail)+'</span>':'')+'</li>';
+      }).join('')+'</ol>';
+      obsahEl.innerHTML=polH+jedH;
+    };
+    dnesEl.querySelectorAll('.sipka').forEach(function(b){b.addEventListener('click',function(){
+      idx+=(+b.dataset.smer);idx=Math.max(0,Math.min(tyzden.length-1,idx));vykresli();
+    })});
+    vykresli();
+  }catch(e){}}
+
+  /* formulár: polia podľa typu dopytu */
+  var f=document.getElementById('dopyt-form');
+  if(f){  /* v živom režime bez formWebhook ho nahrádza rezervacie/widget.js */
+  var prepni=function(){
+    var t=(f.querySelector('input[name=typ]:checked')||{}).value;
+    f.querySelectorAll('[data-pre]').forEach(function(b){
+      var ok=b.getAttribute('data-pre').split(' ').indexOf(t)>-1;
+      b.hidden=!ok;b.querySelectorAll('input,select,textarea').forEach(function(i){i.disabled=!ok});
+    });
+  };
+  f.addEventListener('change',function(e){if(e.target.name==='typ')prepni()});
+  document.querySelectorAll('a[data-typ]').forEach(function(a){a.addEventListener('click',function(){
+    var r=f.querySelector('input[name=typ][value="'+a.getAttribute('data-typ')+'"]');if(r){r.checked=true;prepni()}
+  })});
+  document.getElementById('datum').min=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+  prepni();
+  f.addEventListener('submit',async function(ev){
+    ev.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return}
+    var btn=f.querySelector('button[type=submit]'),hook=f.dataset.webhook;
+    btn.disabled=true;
+    if(hook){btn.textContent='Odosielam…';try{await fetch(hook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))})}catch(e){}}
+    btn.textContent='Dopyt odoslaný';
+    var ok=document.getElementById('dopyt-ok');ok.style.display='block';ok.focus();
+  });
+  }
+})();
+</script>
+<!-- demo: návšteva, rozlíšenie ty/klient a akcia „Ozvite sa“ (demos/_svenity/demo.js) -->
+<script src="/_svenity/demo.js" defer=""></script>
+<!-- EFEKT NA MIERU (pravidlo 14): „Guličky“. Prečo práve tento: v Katke je na plagátoch osláv aj na fotkách veľký gulíčkový bazén (kruh „Guličky“ v ich ponuke)
+     a deti ho poznajú ako prvú vec, do ktorej skočia. Pri načítaní sa na spodný okraj úvodu zosype hŕstka farebných guličiek (farby z dema: koral, nechtík, ružová, list)
+     a zostane ako malý bazén. Po ~3 s zmiznú a vrstva sa odstráni, takže nič nezakrýva H1 ani obsah. Guličky sú dekorácia (aria-hidden, pointer-events:none),
+     pri prefers-reduced-motion sa nič nerobí. Jeden priechod, žiadne slučky. -->
+<style>
+.gulicky{position:absolute;left:0;right:0;bottom:0;height:min(46%,280px);pointer-events:none;z-index:2;overflow:hidden}
+.gulicky i{position:absolute;display:block;border-radius:50%;width:var(--d);height:var(--d);left:var(--x);bottom:var(--y);
+  background:radial-gradient(circle at 32% 28%,#ffffffcc 0 11%,transparent 12%),var(--c);
+  transform:translateY(var(--pad));opacity:0;animation:gulicka 1.15s var(--delay) cubic-bezier(.3,.7,.4,1) forwards,gulicka-zmiz .6s 3.1s ease-out forwards;will-change:transform}
+@keyframes gulicka{
+  0%{transform:translateY(var(--pad));opacity:0}
+  8%{opacity:1}
+  58%{transform:translateY(0);opacity:1}
+  76%{transform:translateY(calc(var(--d) * -.38));opacity:1}
+  100%{transform:translateY(0);opacity:1}
+}
+@keyframes gulicka-zmiz{to{opacity:0}}
+@media(prefers-reduced-motion:reduce){.gulicky{display:none}}
+</style>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var hero=document.querySelector('.uvod');if(!hero)return;
+  if(getComputedStyle(hero).position==='static')hero.style.position='relative';
+  var vrstva=document.createElement('div');vrstva.className='gulicky';vrstva.setAttribute('aria-hidden','true');
+  var w=hero.clientWidth||window.innerWidth,farby=['#C8372B','#F2B632','#F29BA6','#3E8A4E','#E0473A','#F2B632'];
+  var d=w<600?26:38,krok=d*.86,poctu=Math.ceil(w/krok),n=0;
+  for(var rad=0;rad<2;rad++){
+    var posun=rad?krok/2:0,max=rad?poctu-1:poctu+1;
+    for(var i=0;i<max;i++){
+      var b=document.createElement('i'),h=(i*7+rad*3)%6;
+      b.style.cssText='--d:'+d+'px;--x:'+(posun+i*krok-d*.4)+'px;--y:'+(rad*d*.62-d*.2)+'px;--c:'+farby[h]+';--pad:-'+(240+((i*37)%90))+'px;--delay:'+(((i*53+rad*131)%90)/100+rad*.25).toFixed(2)+'s';
+      vrstva.appendChild(b);n++;
+    }
+  }
+  hero.appendChild(vrstva);
+  setTimeout(function(){if(vrstva.parentNode)vrstva.parentNode.removeChild(vrstva)},4200);
+})();
+</script>
+
+
+
+<div id="sv-akcia"></div><span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span></body>

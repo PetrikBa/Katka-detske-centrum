@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-fraunces: "Fraunces", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { width: 100%; margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: "Fraunces", serif; font-weight: 700; }
