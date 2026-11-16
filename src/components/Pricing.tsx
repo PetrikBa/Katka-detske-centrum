@@ -37,6 +37,29 @@ export function Pricing() {
         Dieťa do 1 roka vstúpi zadarmo, doprovod platí 1 €. Otvorené denne od
         10:00 do 19:00.
       </p>
+
+      <div className="mx-auto mt-12 max-w-4xl rounded-3xl bg-white/70 p-5 sm:p-8">
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#172a50]">Darčekové poukazy a permanentky</h3>
+          <p className="mt-2 text-sm text-[#526079]">
+            Darujte deťom radosť – ideálny darček na narodeniny, sviatky alebo len tak.
+          </p>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl bg-white p-5 text-center shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#526079]">Permanentka na 2 hodiny</p>
+            <p className="mt-2 text-sm text-[#526079]">Bez časového obmedzenia</p>
+            <p className="mt-4 text-3xl font-bold text-[#c93d2b]">10 vstupov <span className="text-[#172a50]">75 €</span></p>
+          </div>
+          <div className="rounded-2xl bg-white p-5 text-center shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#526079]">Hodinová permanentka</p>
+            <p className="mt-2 text-sm text-[#526079]">Bez časového obmedzenia</p>
+            <p className="mt-4 text-3xl font-bold text-[#c93d2b]">5 + 1 vstup <span className="text-[#172a50]">25 €</span></p>
+            <p className="mt-1 text-sm text-[#526079]">Jeden vstup navyše zadarmo</p>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
   );

@@ -81,30 +81,54 @@ export default function App() {
         <SdocSlnecko />
         <Workshops />
         <Reviews />
-        <section id="kontakt" className="bg-[#efe0c1] px-5 py-16 scroll-mt-24">
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+        <section id="kontakt" className="scroll-mt-24 bg-[#f7eedc] px-5 py-16">
+          <div className="mx-auto grid max-w-6xl items-stretch gap-10 md:grid-cols-2 md:gap-16">
             <div>
-              <h2 className="text-3xl font-bold">
-                Centrum, ktoré patrí vám a vašim deťom
+              <h2 className="max-w-lg text-4xl font-bold leading-tight text-[#172a50] sm:text-5xl">
+                Kontakt a otváracie hodiny
               </h2>
-              <p className="mt-4 leading-7">
-                Katka detské centrum je detské rozprávkové ihrisko na námestí v
-                Novom Meste nad Váhom. Deti sa tu zahrajú, rodičia môžu posedieť
-                a oddýchnuť si. Oslávte narodeniny svojich detí v príjemnom
-                prostredí.
-              </p>
+              <div className="mt-7 border-t-2 border-[#172a50]">
+                <div className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-4 sm:grid-cols-[8rem_1fr]">
+                  <span className="text-sm text-[#526079]">Telefón</span>
+                  <a className="font-semibold text-[#172a50] underline decoration-[#c93d2b] underline-offset-4" href="tel:0944282864">0944 282 864</a>
+                </div>
+                <div className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-4 sm:grid-cols-[8rem_1fr]">
+                  <span className="text-sm text-[#526079]">E-mail</span>
+                  <a className="break-all font-semibold text-[#172a50] underline decoration-[#c93d2b] underline-offset-4" href="mailto:detskecentrumkatka@gmail.com">detskecentrumkatka@gmail.com</a>
+                </div>
+                <div className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-4 sm:grid-cols-[8rem_1fr]">
+                  <span className="text-sm text-[#526079]">Adresa</span>
+                  <span className="font-medium leading-6 text-[#172a50]">Námestie slobody 2869/3, 915 01 Nové Mesto nad Váhom</span>
+                </div>
+                <div className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-4 sm:grid-cols-[8rem_1fr]">
+                  <span className="text-sm text-[#526079]">Facebook</span>
+                  <a className="font-semibold text-[#172a50] underline decoration-[#c93d2b] underline-offset-4" href="https://www.facebook.com/detskecentrumKatka" target="_blank" rel="noreferrer">Katka detské centrum</a>
+                </div>
+                <div className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-4 sm:grid-cols-[8rem_1fr]">
+                  <span className="text-sm text-[#526079]">Instagram</span>
+                  <a className="font-semibold text-[#172a50] underline decoration-[#c93d2b] underline-offset-4" href="https://www.instagram.com/detske_centrum_katka/" target="_blank" rel="noreferrer">@detske_centrum_katka</a>
+                </div>
+              </div>
+              <div className="mt-6 flex justify-between gap-4 border-b border-[#172a50]/20 py-3 font-semibold text-[#172a50]">
+                <span>Pondelok – Nedeľa</span>
+                <span className="whitespace-nowrap">10:00 – 19:00</span>
+              </div>
             </div>
-            <div className="rounded-2xl bg-white p-6 leading-8">
-              <b>Kontakt a otváracie hodiny</b>
-              <p>
-                0944 282 864
-                <br />
-                Nové Mesto nad Váhom
-                <br />
-                Pondelok – Nedeľa　10:00 – 19:00
-              </p>
-              <a href="mailto:detskecentrumkatka@gmail.com">
-                detskecentrumkatka@gmail.com
+            <div className="flex min-h-[360px] flex-col overflow-hidden rounded-3xl bg-[#efe0c1] shadow-sm md:min-h-[520px]">
+              <iframe
+                title="Mapa Detského centra Katka na Námestí slobody v Novom Meste nad Váhom"
+                src="https://maps.google.com/maps?q=N%C3%A1mestie%20slobody%202869%2F3%2C%20915%2001%20Nov%C3%A9%20Mesto%20nad%20V%C3%A1hom&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                className="min-h-[360px] w-full flex-1 border-0 md:min-h-[520px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                className="px-5 py-3 text-center text-sm font-semibold text-[#172a50] underline underline-offset-4"
+                href="https://maps.google.com/?q=N%C3%A1mestie%20slobody%202869%2F3%2C%20915%2001%20Nov%C3%A9%20Mesto%20nad%20V%C3%A1hom"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Otvoriť trasu v Google Maps
               </a>
             </div>
           </div>

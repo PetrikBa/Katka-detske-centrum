@@ -39,12 +39,12 @@ const food = [
 export function Booking() {
   const [pack, setPack] = useState(0),
     [mascot, setMascot] = useState(0),
-    [qty, setQty] = useState<number[]>(food.map(() => 0)),
+    [qty, setQty] = useState<string[]>(food.map(() => "")),
     [sent, setSent] = useState(false);
   const total =
     packs[pack][1] +
     mascots[mascot][1] +
-    qty.reduce((s, n, i) => s + n * food[i][1], 0);
+    qty.reduce((s, n, i) => s + (Number(n) || 0) * food[i][1], 0);
   const card = (
     item: readonly [string, number, string, string],
     selected: boolean,
@@ -111,14 +111,10 @@ export function Booking() {
                 className="w-16 rounded-lg border p-2 text-center"
                 type="number"
                 min="0"
+                inputMode="numeric"
+                placeholder="0"
                 value={qty[i]}
-                onChange={(e) =>
-                  setQty(
-                    qty.map((n, j) =>
-                      i === j ? Math.max(0, +e.target.value) : n,
-                    ),
-                  )
-                }
+                onChange={(e) => setQty(qty.map((n, j) => j === i ? e.target.value : n))}
               />
             </label>
           ))}
