@@ -40,7 +40,7 @@ export function Booking() {
   const [pack, setPack] = useState(0),
     [mascot, setMascot] = useState(0),
     [qty, setQty] = useState<string[]>(food.map(() => "")),
-    [sent, setSent] = useState(false);
+    [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const total =
     packs[pack][1] +
     mascots[mascot][1] +
@@ -73,9 +73,34 @@ export function Booking() {
   return (
     <section id="dopyt" className="bg-[#f7efdf] px-4 py-16">
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          setSent(true);
+          const form = e.currentTarget;
+          const formData = new FormData(form);
+          setStatus("sending");
+          try {
+            const response = await fetch("./odoslat.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: formData.get("name"),
+                email: formData.get("email"),
+                phone: formData.get("phone"),
+                children: formData.get("children"),
+                date: formData.get("date"),
+                time: formData.get("time"),
+                note: formData.get("note"),
+                website: formData.get("website"),
+                pack: packs[pack][0],
+                mascot: mascots[mascot][0],
+                food: food.map(([name], i) => ({ name, quantity: qty[i] || "0" })),
+              }),
+            });
+            const result: { success?: boolean } = await response.json();
+            setStatus(response.ok && result.success ? "success" : "error");
+          } catch {
+            setStatus("error");
+          }
         }}
         className="mx-auto max-w-3xl rounded-3xl border border-[#aab4bf] bg-white p-5 shadow-sm sm:p-8"
       >
@@ -111,9 +136,12 @@ export function Booking() {
                 className="w-16 rounded-lg border p-2 text-center"
                 type="number"
                 min="0"
+                max="100"
+                step="1"
                 inputMode="numeric"
                 placeholder="0"
                 value={qty[i]}
+                name={`food_${i}`}
                 onChange={(e) => setQty(qty.map((n, j) => j === i ? e.target.value : n))}
               />
             </label>
@@ -135,6 +163,7 @@ export function Booking() {
             Meno
             <input
               required
+              name="name"
               maxLength={120}
               autoComplete="name"
               className="rounded-lg border p-3"
@@ -144,6 +173,7 @@ export function Booking() {
             E-mail
             <input
               required
+              name="email"
               type="email"
               autoComplete="email"
               className="rounded-lg border p-3"
@@ -153,6 +183,7 @@ export function Booking() {
             Telefón (nepovinné)
             <input
               type="tel"
+              name="phone"
               autoComplete="tel"
               className="rounded-lg border p-3"
             />
@@ -161,6 +192,7 @@ export function Booking() {
             Počet detí (nepovinné)
             <input
               type="number"
+              name="children"
               min="1"
               max="60"
               className="rounded-lg border p-3"
@@ -168,11 +200,11 @@ export function Booking() {
           </label>
           <label className="grid gap-1 text-sm">
             Dátum oslavy
-            <input type="date" required className="rounded-lg border p-3" />
+            <input type="date" name="date" required className="rounded-lg border p-3" />
           </label>
           <label className="grid gap-1 text-sm">
             Čas oslavy
-            <select required className="rounded-lg border p-3">
+            <select name="time" required className="rounded-lg border p-3">
               <option value="">Vyberte čas</option>
               <option>10:00 - 13:00</option>
               <option>15:00 - 18:00</option>
@@ -183,20 +215,27 @@ export function Booking() {
           Poznámka (meno oslávenca, vek, alergie)
           <textarea
             rows={3}
+            name="note"
             maxLength={3000}
             className="rounded-lg border p-3"
           />
+        </label>
+        <label aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+          Nevyplňujte toto pole
+          <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
         <p className="mt-3 text-xs text-slate-500">
           Kontaktné údaje použijeme na vybavenie vášho dopytu. Termín platí až
           po potvrdení.
         </p>
-        <button className="mt-4 rounded-full bg-[#c93d2b] px-6 py-3 font-bold text-white">
-          {sent ? "Dopyt pripravený" : "Odoslať dopyt na oslavu"}
+        <button disabled={status === "sending"} className="mt-4 rounded-full bg-[#c93d2b] px-6 py-3 font-bold text-white disabled:cursor-wait disabled:opacity-60">
+          {status === "sending" ? "Odosielam…" : "Odoslať formulár"}
         </button>
-        {sent && (
-          <p role="status" className="mt-3 text-[#172a50]">
-            Ďakujeme, váš dopyt je pripravený.
+        {status !== "idle" && status !== "sending" && (
+          <p role={status === "success" ? "status" : "alert"} className={`mt-3 ${status === "success" ? "text-[#172a50]" : "text-[#a1261b]"}`}>
+            {status === "success"
+              ? "Ďakujeme, váš dopyt sme odoslali. Čoskoro sa vám ozveme."
+              : "Dopyt sa nepodarilo odoslať. Skúste to, prosím, znova alebo nám zavolajte na 0944 282 864."}
           </p>
         )}
       </form>

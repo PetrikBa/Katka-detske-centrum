@@ -5,6 +5,7 @@ import heroPhoto from "./assets/heroimg.png";
 import { Booking } from "./components/Booking";
 import { Header } from "./components/Header";
 import { Pricing } from "./components/Pricing";
+import { PlannedEvents } from "./components/PlannedEvents";
 import {
   MascotRental,
   SdocSlnecko,
@@ -57,6 +58,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        <PlannedEvents />
         <Pricing />
         <Gallery />
         <Booking />
