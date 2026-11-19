@@ -39,7 +39,7 @@ export function MascotRental() {
           </ul>
           <div className="mt-5 border-t border-[#efe0c1] pt-4 text-sm leading-6">
             <b className="text-[#172a50]">Maskot na oslave v centre</b>
-            <p className="mt-1">Maskot sa venuje deťom; pri návšteve bez animátora si kostým oblečie dospelý z hostí.</p>
+            <p className="mt-1">Maskot sa venuje deťom, prinesie oslávencovi tortu a hrá sa s ním; pri návšteve bez animátora si kostým oblečie dospelý z hostí.</p>
             <p className="mt-1">½ hodiny bez animátora – 20 € · ½ hodiny s animátorom – 20 € · 1 hodina s animátorom – 40 €.</p>
           </div>
           <a className="mt-5 inline-flex rounded-full bg-[#c93d2b] px-5 py-3 font-bold text-white" href="tel:0944282864">Dohodnúť prenájom: 0944 282 864</a>
@@ -56,7 +56,7 @@ export function SdocSlnecko() {
         <div>
           <p className="mb-2 font-semibold uppercase tracking-[.16em] text-[#c93d2b]">Súkromné opatrovateľské centrum</p>
           <h2 className="text-3xl font-bold text-[#172a50] md:text-4xl">SDOC Slniečko</h2>
-          <p className="mt-4 leading-7">Bezpečné, útulné a rodinné prostredie pre deti vo veku od 2,5 do 4 rokov. Centrum s rozlohou 380 m² funguje od 1. apríla 2026; otváracie hodiny od 9:00 do 16:00 sú po dohode s rodičmi.</p>
+          <p className="mt-4 leading-7">Bezpečné, útulné a rodinné prostredie pre deti vo veku od 2,5 do 4 rokov. Centrum s rozlohou 380 m² s terasou funguje od 1. apríla 2026; otváracie hodiny od 7:00 do 16:00 sú po dohode s rodičmi.</p>
           <div className="mt-5 rounded-2xl bg-[#fffaf1] p-5">
             <h3 className="font-bold text-[#172a50]">Každý deň sa učíme hrou</h3>
             <p className="mt-2 text-sm leading-6">Hravé vzdelávanie, základy angličtiny, pohybové hry, čítanie rozprávok, hudobné nástroje, rozvoj jemnej motoriky, tvorenie a zapájanie sa do kolektívu.</p>

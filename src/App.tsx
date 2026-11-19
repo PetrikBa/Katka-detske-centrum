@@ -1,6 +1,7 @@
-import poolPhoto from "./assets/bazen.jpg";
+import centrumPhoto from "./assets/centrum.jpg";
 import partyPhoto from "./assets/oslavy.jpg";
 import mascotPhoto from "./assets/maskoty.webp";
+import cafePhoto from "./assets/bar.jpg";
 import heroPhoto from "./assets/heroimg.png";
 import { Booking } from "./components/Booking";
 import { Header } from "./components/Header";
@@ -28,7 +29,7 @@ export default function App() {
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-8 text-[#f4ead5]">
                 Detská rozprávková hernička na námestí v Novom Meste nad Váhom
-                pre deti od 0 do 12 rokov o ploche takmer 400m². Oslavu si
+                pre deti od 0 do 12 rokov o ploche takmer 380 m² s terasou. Oslavu si
                 vyberiete na presný čas a termín platí po potvrdení.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -111,9 +112,21 @@ export default function App() {
                   <a className="font-semibold text-[#172a50] underline decoration-[#c93d2b] underline-offset-4" href="https://www.instagram.com/detske_centrum_katka/" target="_blank" rel="noreferrer">@detske_centrum_katka</a>
                 </div>
               </div>
-              <div className="mt-6 flex justify-between gap-4 border-b border-[#172a50]/20 py-3 font-semibold text-[#172a50]">
-                <span>Pondelok – Nedeľa</span>
-                <span className="whitespace-nowrap">10:00 – 19:00</span>
+              <div className="mt-6">
+                {[
+                  ["Pondelok", "9:00 – 12:00, 15:00 – 19:00"],
+                  ["Utorok", "9:00 – 12:00, 15:00 – 19:00"],
+                  ["Streda", "9:00 – 12:00, 15:00 – 19:00"],
+                  ["Štvrtok", "9:00 – 12:00, 15:00 – 19:00"],
+                  ["Piatok", "9:00 – 19:00"],
+                  ["Sobota", "9:00 – 19:00"],
+                  ["Nedeľa", "9:00 – 19:00"],
+                ].map(([day, hours]) => (
+                  <div key={day} className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-[#172a50]/20 py-3 font-semibold text-[#172a50] sm:grid-cols-[8rem_1fr]">
+                    <span>{day}</span>
+                    <span>{hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="flex min-h-[360px] flex-col overflow-hidden rounded-3xl bg-[#efe0c1] shadow-sm md:min-h-[520px]">
@@ -147,10 +160,10 @@ export default function App() {
 function Gallery() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-14">
-      <h2 className="text-3xl font-bold">Pozrite sa k nám</h2>
+      <h2 className="text-3xl font-bold text-center">Pozrite sa k nám</h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         {[
-          [poolPhoto, "Gulôčkový bazén a preliezky v interiérovom ihrisku"],
+          [centrumPhoto, "Trampolíny, gulôčkový bazén a preliezky v interiérovom ihrisku"],
           [partyPhoto, "Narodeninový stôl s výzdobou"],
           [mascotPhoto, "Maskoty z požičovne v centre"],
         ].map(([img, caption]) => (
@@ -158,11 +171,24 @@ function Gallery() {
             <img
               src={img}
               alt={caption}
-              className="h-56 w-full rounded-2xl object-cover"
+              className="aspect-square w-full rounded-2xl object-cover"
             />
-            <figcaption className="mt-2 text-sm">{caption}</figcaption>
+            <figcaption className="mt-2 text-center text-sm">{caption}</figcaption>
           </figure>
         ))}
+      </div>
+      <div className="mt-10 flex flex-col items-center text-center">
+        <h3 className="text-2xl font-bold">Kaviareň</h3>
+        <figure className="mt-4 w-full max-w-sm">
+          <img
+            src={cafePhoto}
+            alt="Kaviareň v detskom centre Katka"
+            className="aspect-square w-full rounded-2xl object-cover"
+          />
+          <figcaption className="mt-2 text-center text-sm">
+            Káva, čaj, sladké a slané pochutiny
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

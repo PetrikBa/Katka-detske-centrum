@@ -1,9 +1,16 @@
 import { useState } from "react";
 import partyPhoto from "../assets/oslavy.jpg";
-import poolPhoto from "../assets/bazen.jpg";
+import centrumPhoto from "../assets/centrum.jpg";
 import mascotPhoto from "../assets/maskoty.webp";
 import animatorPhoto from "../assets/animator.jpg";
+import tablePhoto from "../assets/table.jpg";
 const packs = [
+  [
+    "Rezervácia stola bez výzdoby",
+    0,
+    "",
+    tablePhoto,
+  ],
   [
     "Oslava",
     190,
@@ -14,7 +21,7 @@ const packs = [
     "Uzatvorená spoločnosť",
     360,
     "Celé centrum len pre vás, súkromie, neobmedzená zábava a oslava bez cudzích návštevníkov.",
-    poolPhoto,
+    centrumPhoto,
   ],
 ] as const;
 const mascots = [
@@ -25,16 +32,19 @@ const mascots = [
     "Dino, Maco, Micky alebo Minnie, 1 deň.",
     mascotPhoto,
   ],
-  ["Maskot s animátorom", 40, "Maskot a animátor, 1 deň.", animatorPhoto],
+  ["Maskot s animátorom", 40, "Maskot a animátor, 1 deň, prinesú oslávencovi tortu a hrajú sa s ním", animatorPhoto],
 ] as const;
 const food = [
-  ["Ovocné a mäsové prkénko", 18],
-  ["Hranolky", 4],
-  ["Pizza", 9],
-  ["Nugetky", 6],
-  ["Párok v rožku", 3],
-  ["Zemiaková kvetina", 5],
-  ["Palacinky", 4],
+  ["Prkénko", 1.5],
+  ["Ovocná misa", 30],
+  ["Hranolky", 5],
+  ["Pizza malá", 7],
+  ["Pizza veľká", 9],
+  ["Nugetky (6 ks)", 5],
+  ["Párok v rožku", 2.9],
+  ["Zemiaková kvetina", 2.9],
+  ["Palacinky", 2],
+  ["Wafle", 2],
 ] as const;
 export function Booking() {
   const [pack, setPack] = useState(0),
@@ -104,8 +114,8 @@ export function Booking() {
         }}
         className="mx-auto max-w-3xl rounded-3xl border border-[#aab4bf] bg-white p-5 shadow-sm sm:p-8"
       >
-        <h2 className="text-3xl font-bold">Zostavte si oslavu</h2>
-        <p className="mt-2 text-sm text-slate-600">
+        <h2 className="text-3xl font-bold text-center">Zostavte si oslavu</h2>
+        <p className="mt-2 text-sm text-slate-600 text-center">
           Vyberte balík, maskota a občerstvenie. Termín platí po potvrdení.
         </p>
         <h3 className="mb-3 mt-7 font-bold">1. Balík oslavy</h3>
@@ -203,11 +213,14 @@ export function Booking() {
             <input type="date" name="date" required className="rounded-lg border p-3" />
           </label>
           <label className="grid gap-1 text-sm">
-            Čas oslavy
+            Začiatok oslavy
             <select name="time" required className="rounded-lg border p-3">
-              <option value="">Vyberte čas</option>
-              <option>10:00 - 13:00</option>
-              <option>15:00 - 18:00</option>
+              <option value="">Vyberte začiatok oslavy</option>
+              {Array.from({ length: 17 }, (_, index) => {
+                const minutes = 10 * 60 + index * 30;
+                const time = `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}`;
+                return <option key={time} value={time}>{time}</option>;
+              })}
             </select>
           </label>
         </div>
