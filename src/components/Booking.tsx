@@ -45,6 +45,7 @@ const food = [
   ["Zemiaková kvetina", 2.9],
   ["Palacinky", 2],
   ["Wafle", 2],
+  ["Detský punč (2 dcl)", 2.5],
 ] as const;
 export function Booking() {
   const [pack, setPack] = useState(0),

@@ -34,8 +34,7 @@ export function Pricing() {
         ))}
       </div>
       <p className="mt-10 text-center text-sm text-[#526079]">
-        Dieťa do 1 roka vstúpi zadarmo, doprovod platí 1 €. Otvorené denne od
-        10:00 do 19:00.
+        Dieťa do 1 roka vstúpi zadarmo, doprovod platí 1 €.
       </p>
 
       <div className="mx-auto mt-12 max-w-4xl rounded-3xl bg-white/70 p-5 sm:p-8">

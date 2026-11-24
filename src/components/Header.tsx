@@ -15,7 +15,12 @@ export function Header() {
   ];
 
   useEffect(() => {
-    const updateScrollState = () => setIsScrolled(window.scrollY > 20);
+    // Use separate enter/leave points so the header's size transition cannot
+    // immediately move scrollY back across the same threshold.
+    const updateScrollState = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled((current) => current ? scrollY > 8 : scrollY > 32);
+    };
     updateScrollState();
     window.addEventListener("scroll", updateScrollState, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollState);
@@ -66,20 +71,18 @@ export function Header() {
           </nav>
         )}
       </header>
-      {!isScrolled && (
-        <div
-          aria-hidden="true"
-          className="m-0 h-4 w-full overflow-hidden p-0"
-          style={{
-            backgroundColor: "#172a50",
-            backgroundImage:
-              "radial-gradient(circle at 16px 0, #F7EEDC 16px, transparent 16.5px)",
-            backgroundSize: "32px 16px",
-            backgroundPosition: "center top",
-            backgroundRepeat: "repeat-x",
-          }}
-        />
-      )}
+      <div
+        aria-hidden="true"
+        className={`m-0 h-4 w-full p-0 transition-opacity duration-300 ${isScrolled ? "opacity-0" : "opacity-100"}`}
+        style={{
+          backgroundColor: "#172a50",
+          backgroundImage:
+            "radial-gradient(circle at 16px 0, #F7EEDC 16px, transparent 16.5px)",
+          backgroundSize: "32px 16px",
+          backgroundPosition: "center top",
+          backgroundRepeat: "repeat-x",
+        }}
+      />
     </div>
   );
 }
